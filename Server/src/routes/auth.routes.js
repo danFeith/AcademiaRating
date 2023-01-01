@@ -18,4 +18,9 @@ authRoutes.post(
     authController.signin
 );
 
+authRoutes.post(
+    "/refreshtoken",
+    authController.refreshToken);
+
+
 export default authRoutes;
