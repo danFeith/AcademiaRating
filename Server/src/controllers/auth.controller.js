@@ -17,7 +17,7 @@ export const signup = (req, res) => {
         password: bcrypt.hashSync(req.body.password, 8)
     })
         .then(user => {
-            if (req.body.roles) {
+            if (req.body.roles && req.body.roles.length > 0) {
                 Role.findAll({
                     where: {
                         name: {

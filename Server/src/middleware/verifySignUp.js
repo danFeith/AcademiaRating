@@ -34,24 +34,24 @@ const checkDuplicateUsernameOrEmail = (req, res, next) => {
 };
 
 const checkRolesExisted = async (req, res, next) => {
-    let isUnvalidRolesExisted = false;
+    let allRolesExists = true;
 
     if (req.body.roles) {
         await db.role.findAll({ raw: true }).then(roles => {
             const rolesNames = roles.map(r => r.name)
-            req.body.roles.forEach(role => {
-                if (!rolesNames.includes(role)) {
-                    isUnvalidRolesExisted = true
+            for (let i = 0; i < req.body.roles.length; i++) {
+                if (!rolesNames.includes(req.body.roles[i])) {
+                    allRolesExists = false
                     res.status(400).send({
-                        message: "Failed! Role does not exist = " + role
+                        message: "Failed! Role does not exist = " + req.body.roles[i]
                     });
-                    return
+
                 }
-            })
+            }
         })
     }
 
-    if (!isUnvalidRolesExisted) next();
+    if (allRolesExists) next();
 
 };
 
