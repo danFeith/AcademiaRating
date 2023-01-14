@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import authJwt from '../middleware/authJwt.js';
-import * as testController from "../controllers/test.controller.js";
+import authJwt from '../middlewares/authJwt';
+import * as testController from "../controllers/test.controller";
 
 const testRoutes = Router();
 
