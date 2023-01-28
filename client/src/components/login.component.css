@@ -1,0 +1,127 @@
+#login-page {
+    display: flex;
+    width: 92%;
+    height: 80%;
+    overflow-y: hidden;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#login-page .logo-container {
+    width: 34%;
+    height: 100%;
+}
+
+#login-page .login-container {
+    width: 66%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container .login-card {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card .title {
+    font-size: 1.5vw;
+    width: 100%;
+    font-weight: bold;
+    height: 12%;
+}
+
+.login-card .sub-title {
+    font-size: 0.9vw;
+    color: grey;
+    width: 100%;
+    height: 12%;
+
+}
+
+.login-card input[type="text"],
+input[type="password"] {
+    width: 100%;
+    height: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 1vw;
+}
+
+.login-card .login-options {
+    width: 100%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.login-card .login-options input[type="checkbox"] {
+    width: 5%;
+    height: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    /* box-sizing: border-box; */
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.login-card .login-options label {
+    padding: 10px;
+    font-size: 0.8vw !important;
+    font-weight: normal !important;
+    width: 45%;
+}
+
+.login-card .login-options .forgot-password-container {
+    width: 50%;
+    font-size: 0.8vw !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.login-card label {
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.login-card .button-container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-card .button-container .signup-link {
+    padding: 1%;
+    font-size: 0.8vw;
+    color: gray;
+}
+
+.login-card .button-container .signin-button {
+    background-color: rgb(126, 86, 218);
+    color: white;
+    font-size: 0.9vw;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    cursor: pointer;
+}
