@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8080/api/auth";
 
-const register = (username: string, email: string, password: string) => {
+export const register = (username: string, email: string, password: string) => {
     return axios.post(`${API_URL}/signup`, {
         username,
         email,
@@ -10,7 +10,7 @@ const register = (username: string, email: string, password: string) => {
     });
 };
 
-const login = (username: string, password: string) => {
+export const login = (username: string, password: string) => {
     return axios
         .post(`${API_URL}/signin`, {
             username,
@@ -25,11 +25,11 @@ const login = (username: string, password: string) => {
         });
 };
 
-const logout = () => {
+export const logout = () => {
     localStorage.removeItem("user");
 };
 
-const getCurrentUser = () => {
+export const getCurrentUser = () => {
     const userStr = localStorage.getItem("user")
     if (userStr) return JSON.parse(userStr)
 

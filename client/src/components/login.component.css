@@ -22,32 +22,76 @@
     align-items: center;
 }
 
+@media (max-width: 800px) {
+    #login-page {
+        height: 50%;
+    }
+
+    #login-page .logo-container {
+        width: 0%;
+    }
+
+    #login-page .login-container {
+        width: 100%;
+    }
+
+    .login-card .login-fields .title {
+        font-size: 20px !important;
+    }
+
+    .login-card .login-fields .sub-title {
+        font-size: 11px !important;
+    }
+
+    .login-card .login-fields input[type="text"],
+    input[type="password"] {
+        font-size: 10px !important;
+    }
+
+    .login-card .login-fields label {
+        font-size: 9px !important;
+    }
+
+    .login-card .login-options label {
+        font-size: 5px !important;
+    }
+
+}
+
 .login-container .login-card {
     width: 40%;
-    height: 60%;
+    height: 80%;
     display: flex;
     flex-direction: column;
 }
 
-.login-card .title {
-    font-size: 1.5vw;
-    width: 100%;
-    font-weight: bold;
-    height: 12%;
+.login-card .login-fields {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
 }
 
-.login-card .sub-title {
+.login-card .login-fields .title {
+    font-size: 2vw;
+    width: 100%;
+    font-weight: bold;
+    padding-bottom: 5%;
+    /* height: 12%; */
+}
+
+.login-card .login-fields .sub-title {
     font-size: 0.9vw;
     color: grey;
     width: 100%;
-    height: 12%;
+    padding-bottom: 5%;
+    /* height: 12%; */
 
 }
 
-.login-card input[type="text"],
+.login-card .login-fields input[type="text"],
 input[type="password"] {
     width: 100%;
-    height: 10%;
+    height: 16%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -56,9 +100,14 @@ input[type="password"] {
     font-size: 1vw;
 }
 
+.login-card .login-fields label {
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
 .login-card .login-options {
     width: 100%;
-    height: 10%;
+    height: 7%;
     /* background-color: red; */
     display: flex;
     flex-direction: row;
@@ -78,7 +127,7 @@ input[type="password"] {
 
 .login-card .login-options label {
     padding: 10px;
-    font-size: 0.8vw !important;
+    font-size: 0.8vw;
     font-weight: normal !important;
     width: 45%;
 }
@@ -91,19 +140,16 @@ input[type="password"] {
     justify-content: flex-end;
 }
 
-.login-card label {
-    font-size: 0.8vw;
-    font-weight: bold;
-}
-
 .logo-container img {
     width: 100%;
     height: 100%;
 }
 
+
+
 .login-card .button-container {
     width: 100%;
-    height: 20%;
+    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,11 +163,58 @@ input[type="password"] {
 }
 
 .login-card .button-container .signin-button {
-    background-color: rgb(126, 86, 218);
+    background-color: rgb(0, 57, 147);
     color: white;
     font-size: 0.9vw;
     border-radius: 10px;
     width: 100%;
     height: 50%;
     cursor: pointer;
+}
+
+.login-card .loading-message {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10;
+    color: red;
+}
+
+.login-card .lds-ring {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.lds-ring div {
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+    border: 4px solid rgb(0, 57, 147);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(0, 57, 147) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
