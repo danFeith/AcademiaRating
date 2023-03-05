@@ -3,11 +3,10 @@ import React, { useState, useRef } from "react";
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import './login.component.css'
 import logo from './logo.jpg'
-import authService from '../services/auth.service'
+import authService from '../../services/auth.service'
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup"
-
-type Props = {}
+import { Props } from "../../types/types";
 
 const Login: React.FC<Props> = () => {
     const navigate: NavigateFunction = useNavigate();
