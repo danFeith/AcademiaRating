@@ -16,4 +16,6 @@ def hello_world():
 
 
 if __name__ == "__main__":
+    x = 0.899999999999
+    print("{0:.3f}".format(x))
     app.run(debug=True)

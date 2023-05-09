@@ -12,17 +12,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json())
 
-
-
-// app.use(function (req, res, next) {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, accept, access-control-allow-origin');
-
-//     if ('OPTIONS' == req.method) res.sendStatus(200);
-//     else next();
-// });
-
 const port = 5000
 var currentFacultIndex = 1
 var numberOfOptions = 0
@@ -40,6 +29,7 @@ app.get('/currentOptionIndex', (req, res) => {
 
 app.get('/increaseCurrentFacultIndex', (req, res) => {
     currentFacultIndex += 1
+    console.log(currentFacultIndex)
     res.json({ currentFacultIndex: currentFacultIndex })
 })
 
@@ -53,7 +43,6 @@ app.post('/addCourse', (req, res) => {
         JSON.stringify(coursesJson[req.body.courseNumber]["teachersArray"]) == JSON.stringify(req.body.teachersArray) &&
         coursesJson[req.body.courseNumber]["courseName"] == req.body.courseName &&
         coursesJson[req.body.courseNumber]["facult"] == req.body.facult) {
-        console.log("courseNumber already exists: " + req.body.courseNumber + " - " + req.body.teacher)
     } else {
         coursesJson[req.body.courseNumber] = {
             id: req.body.courseNumber,
@@ -66,7 +55,8 @@ app.post('/addCourse', (req, res) => {
 })
 
 app.get("/finish", (req, res) => {
-    fs.writeFile('myjsonfile.json', JSON.stringify(coursesJson), (err) => { if (err) { console.log(err) } else { console.log("finish") } });
+    fs.writeFile('myjsonfile_english.json', JSON.stringify(coursesJson), (err) => { if (err) { console.log(err) } else { console.log("finish") } });
+    res.sendStatus(200)
 })
 
 app.listen(port, () => {

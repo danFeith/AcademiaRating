@@ -1,4 +1,6 @@
 declare module "*.jpg";
 declare module "*.png";
-
-// export type Props = {}
+declare module "*.svg" {
+    const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+    export default content;
+}

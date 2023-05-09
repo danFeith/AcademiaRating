@@ -5,6 +5,7 @@
     direction: rtl;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #home-page .top-bar {
@@ -15,32 +16,89 @@
     align-items: center;
 }
 
-#home-page .top-bar .login-button {
-    width: 7%;
-    height: 50px;
-    background-color: #FFFFFF;
-    margin-left: 11.3%;
-    border-radius: 30px;
-    border: solid 1px black;
-    color: black;
+#home-page .top-bar .link {
+    flex-grow: 1;
+    font-weight: bold;
     display: flex;
-    align-items: center;
     justify-content: center;
-    cursor: pointer;
+    align-items: center;
+    font-size: 22px;
+    /* background-color: green; */
+    height: 100%;
 }
 
-
-#home-page .top-bar .register-button {
-    width: 7%;
-    height: 50px;
-    background-color: rgb(113, 126, 246);
-    margin-left: 1%;
-    border-radius: 30px;
-    color: white;
+#home-page .top-bar .logo {
+    flex-grow: 7;
     display: flex;
     align-items: center;
+    height: 100%;
+    justify-content: left;
+    padding-left: 10%;
+}
+
+#home-page .title {
+    width: 100%;
+    height: 250px;
+    display: flex;
     justify-content: center;
-    cursor: pointer;
+    align-items: center;
+    font-weight: bold;
+    font-size: 75px;
+}
+
+#home-page .sub-title {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#home-page .home-img {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-page .search-container {
+    width: 60%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+    border: 1px grey solid;
+    margin-top: 20px;
+}
+
+.search-container .search-text {
+    height: 98%;
+    flex-grow: 3;
+    border: none;
+    background-color: white;
+    font-size: 32px;
+}
+
+.search-container .search-dropdown {
+    height: 100%;
+    flex-grow: 1;
+    /* border: 0.5px grey solid; */
+}
+
+.search-container .search-dropdown-control {
+    height: 100%;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
 }
 
 #home-page .opener {
@@ -51,16 +109,6 @@
     border-bottom-left-radius: 30px;
     display: flex;
     flex-direction: column;
-}
-
-.opener .title {
-    color: white;
-    width: 50%;
-    height: 20%;
-    font-weight: bold;
-    font-size: 80px;
-    padding-right: 5%;
-    margin-top: 5%;
 }
 
 .opener .search-bar {
@@ -92,8 +140,8 @@
 
 }
 
-.search-bar .vl {
-    width: 1px;
+.search-container .vl {
+    width: 0.1px;
     border: solid 1px rgba(0, 0, 0, 0.34);
     height: 70%;
 }

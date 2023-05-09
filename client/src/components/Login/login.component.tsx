@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import './login.component.css'
-import logo from './logo.jpg'
+// import logo from './logo.jpg'
 import authService from '../../services/auth.service'
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup"
@@ -73,9 +73,9 @@ const Login: React.FC<Props> = () => {
                     {(message != "") ? <div className="loading-message">{message}</div> : null}
                 </div>
             </div>
-            <div className="logo-container">
+            {/* <div className="logo-container">
                 <img src={logo} />
-            </div>
+            </div> */}
         </div >
 
     )
