@@ -8,13 +8,13 @@ export class institution {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @Column({ charset: "utf8mb4" })
     name: string
 
     @ManyToOne(() => institutionType, (institutionType) => institutionType.institutions)
     institutionType: institutionType
 
-    @Column()
+    @Column({ charset: "utf8mb4" })
     address: string
 
     @ManyToMany(() => degree)

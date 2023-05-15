@@ -6,7 +6,7 @@ export class degree {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @Column({ charset: "utf8mb4" })
     name: string
 
 

@@ -8,7 +8,8 @@ export const DBModel = new DataSource({
     username: "root",
     password: "123456",
     database: "academiaratingdb",
+    charset: "utf8mb4",
     entities: Object.values(entities),
     logging: true,
-    synchronize: true,
+    synchronize: true
 })
