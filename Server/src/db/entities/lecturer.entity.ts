@@ -5,7 +5,7 @@ export class lecturer {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ charset: "utf8mb4" })
+    @Column({ charset: "utf8mb4", unique: true })
     name: string
 
 }

@@ -9,6 +9,11 @@ export class BaseRepository<E extends ObjectLiteral> {
         this.repository = DBModel.getRepository(entity)
     }
 
+    async findWhere(query: {}): Promise<E> {
+        return await this.repository.findOne({ where: query })
+    }
+
+
     async save(newEntiy: E) {
         await this.repository.save(newEntiy)
     }

@@ -1,7 +1,7 @@
 import { institutionType } from '../db/entities';
 import { BaseRepository } from './base.repository';
 
-class UserRepository extends BaseRepository<institutionType> {
+class InstitutionTypeRepository extends BaseRepository<institutionType> {
 
     constructor() {
         super(institutionType)
@@ -22,4 +22,4 @@ class UserRepository extends BaseRepository<institutionType> {
     }
 }
 
-export default new UserRepository();
+export default new InstitutionTypeRepository();

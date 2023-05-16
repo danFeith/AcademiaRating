@@ -1,13 +1,16 @@
 import { institution, institutionType } from '../db/entities';
 import { BaseRepository } from './base.repository';
 
-class UserRepository extends BaseRepository<institution> {
+class InstitutionRepository extends BaseRepository<institution> {
 
 
     constructor() {
         super(institution)
     }
 
+    findByName = async (name: string): Promise<institution> => {
+        return await this.repository.findOne({ where: { name: name } })
+    }
 
     create = (institutionProps: { name: string, address: string, institutionType: institutionType }): institution => {
         return this.repository.create({
@@ -18,4 +21,4 @@ class UserRepository extends BaseRepository<institution> {
     }
 }
 
-export default new UserRepository();
+export default new InstitutionRepository();

@@ -1,17 +1,19 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, ManyToMany, JoinTable } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, ManyToMany, JoinTable, Unique } from "typeorm"
 import { institution } from "./institution.entity"
 import { lecturer } from "./lecturer.entity"
 import { degree } from "./degree.entity"
 
 @Entity()
+@Unique(["name", "degree", "institution"])
+
 export class course {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ charset: "utf8mb4" })
+    @Column({ charset: "utf8mb4", unique: true })
     name: string
 
-    @ManyToMany(() => lecturer)
+    @ManyToMany(() => lecturer, { cascade: true })
     @JoinTable()
     lecturer: lecturer[]
 

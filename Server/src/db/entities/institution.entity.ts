@@ -17,8 +17,7 @@ export class institution {
     @Column({ charset: "utf8mb4" })
     address: string
 
-    @ManyToMany(() => degree)
-    @JoinTable()
+    @OneToMany(() => degree, (degree) => degree.institution)
     degrees: degree[]
 
     @OneToMany(() => course, (course) => course.institution)
