@@ -9,6 +9,10 @@ export class BaseRepository<E extends ObjectLiteral> {
         this.repository = DBModel.getRepository(entity)
     }
 
+    async findAll(select: {}): Promise<E[]> {
+        return await this.repository.find({ select: select })
+    }
+
     async findWhere(query: {}): Promise<E> {
         return await this.repository.findOne({ where: query })
     }

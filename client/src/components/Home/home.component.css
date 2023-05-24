@@ -86,17 +86,19 @@
     align-items: center;
 }
 
-#home-page .search-container {
+#home-page .search-div-container .search-container {
     width: 80%;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: white; */
+    background-color: white;
     border: 1px grey solid;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     flex-direction: row;
+    border-bottom-right-radius: 0;
+    /**/
 }
 
 
@@ -106,7 +108,39 @@
     border: none;
     background-color: white;
     font-size: 32px;
+    text-align: right;
+    border-radius: 20px;
+    border-bottom-right-radius: 0;
+    /**/
+}
+
+#home-page .text-search-options {
+    height: max-content;
+    max-height: 400px;
+    width: 44.9%;
+    border: none;
+    background-color: white;
+    font-size: 32px;
     text-align: center;
+    margin-left: 30%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.text-search-options .option-row {
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+}
+
+.text-search-options .option-row:hover {
+    background-color: #5096ff67;
 }
 
 .search-container .search-text:focus {
@@ -118,6 +152,7 @@
 .search-container .search-dropdown {
     height: 100%;
     width: 25%;
+    border-radius: 20px;
 }
 
 .search-container .search-dropdown-control {
@@ -130,6 +165,7 @@
     font-size: 32px;
     flex-direction: row;
     cursor: pointer;
+    border-radius: 20px;
 
 }
 
@@ -142,7 +178,7 @@
 }
 
 .Dropdown-arrow-wrapper {
-    width: 40% !important;
+    width: 5% !important;
     height: 50% !important;
     /* background-color: red !important; */
     display: flex;
@@ -283,60 +319,4 @@
     .opener .search-bar {
         margin-right: 0;
     }
-}
-
-#home-page .cards-container {
-    width: 100%;
-    height: 570px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
-}
-
-.cards-container .card {
-    width: 20%;
-    height: 95%;
-    text-align: center;
-    color: black;
-    font-size: calc(15px + 0.33vw);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.cards-container .vl {
-    width: 1px;
-    border-right: solid 1px rgba(0, 0, 0, 0.34);
-    height: 70%;
-}
-
-.card .card-text {
-    height: 20%;
-    text-align: center;
-    font-weight: 700;
-}
-
-#home-page .join-container {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.join-container .join-button {
-    width: 20%;
-    height: 100px;
-    border-radius: 30px;
-    background-color: rgb(113, 126, 246);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 600;
-    cursor: pointer;
 }
