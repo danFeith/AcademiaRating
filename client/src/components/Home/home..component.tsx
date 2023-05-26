@@ -79,13 +79,15 @@ const HomePage: React.FC<Props> = () => {
                 </span>
             </div>
             <div className="home-img">
-                <img src={MascotOwl} onClick={() => alert(123)} style={{ width: "40%", height: "100%" }}></img>
+                <img src={MascotOwl} style={{ width: "40%", height: "100%" }}></img>
             </div>
             <div className="search-div-container">
                 <div className="search-container" style={{ borderBottomRightRadius: (isTxtOptionsOpen) ? 0 : '20px' }}>
                     <input type="text" placeholder="חפש/י"
                         style={{ borderBottomRightRadius: (isTxtOptionsOpen) ? 0 : '20px' }}
-                        className="search-text" onBlur={() => setIsTxtOptionsOpen(false)} onFocus={() => setIsTxtOptionsOpen(true)}
+                        className="search-text"
+                        onBlur={() => setTimeout(() => { setIsTxtOptionsOpen(false) }, 100)}
+                        onFocus={() => setIsTxtOptionsOpen(true)}
                         onChange={(e) => setSearchContent(e.target.value)}
                         value={searchContent}></input>
                     <div className="vl"></div>
@@ -101,7 +103,7 @@ const HomePage: React.FC<Props> = () => {
             {(isTxtOptionsOpen) ? <div className="text-search-options">
                 {
                     displayFilteredOptions.map((opt: SearchOption) => {
-                        return <div className="option-row" key={opt.id} onClick={() => { alert(1); }}  >{opt.name}</div>
+                        return <div className="option-row" id="option-row" key={opt.id} onClick={() => { setSearchContent(opt.name); }}  >{opt.name}</div>
                     })
                 }
 
@@ -116,6 +118,46 @@ const HomePage: React.FC<Props> = () => {
                 <span>
                     שלכם. הצטרפו עכשיו ותהיו חלק מהמהפכה!
                 </span>
+            </div>
+
+            <div className="boxes-container">
+                <div className="info-box-wrapper">
+                    <div style={{ width: "70%", height: "70%", backgroundColor: "#F0F1FE" }}></div>  {/*TEMP*/}
+                    {/* <img src={MascotOwl} style={{ width: "70%", height: "60%" }}></img> */}
+                    <div className="info-box-text">
+                        <span> מידע על מוסדות </span>
+                        <span>החינוך, חוות דעת על קורסים ומרצים</span>
+                    </div>
+                </div>
+                <div className="vl"></div>
+                <div className="info-box-wrapper">
+                    <div style={{ width: "70%", height: "70%", backgroundColor: "#F0F1FE" }}></div>  {/*TEMP*/}
+                    {/* <img src={MascotOwl} style={{ width: "70%", height: "60%" }}></img> */}
+                    <div className="info-box-text">
+                        <span> הביקורת שלכם תמיד </span>
+                        <span>תמיד נשארת אנונימית</span>
+                    </div>
+                </div>
+                <div className="vl"></div>
+                <div className="info-box-wrapper">
+                    <div style={{ width: "70%", height: "70%", backgroundColor: "#F0F1FE" }}></div>  {/*TEMP*/}
+                    {/* <img src={MascotOwl} style={{ width: "70%", height: "60%" }}></img> */}
+                    <div className="info-box-text">
+                        <span> ערכו תגובות, דווחו על</span>
+                        <span>מידע שגוי ודרגו את</span>
+                        <span>התגובות שאהבתם</span>
+                    </div>
+                </div>
+            </div>
+            <div className="rate-button-container">
+                <div className="search-button">דרג עכשיו</div>
+            </div>
+            <div className="buttom-bar">
+                <div className="item">צור קשר</div>
+                <div className="item">החזון שלנו</div>
+                <div className="item">תנאי שימוש</div>
+                <div className="item">פרטיות ואבטחה</div>
+                <div className="last-item">הזכויות שמורות לקמפוס גורו</div>
             </div>
         </div >
 
